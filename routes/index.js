@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var db = require('monk')('localhost/housesDB');
+var db = require('monk')(process.env.MONGOLAB_URI || "localhost/housesDB");
 var houses = db.get('houses');
 var registeredUsers = db.get('users');
 
