@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Real Estate Site</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Add your home</h1>
+    <form action="/" method="POST">
+
+      <h2>Basics</h2>
+
+        <p><label for="address">Street Address</label>
+        <input type="text" id="address" name="address"></p>
+
+        <p><label for"city">City</label>
+          <select id="city" name="city">
+              <option value="Austin">Austin</option>
+              <option value="CedarPark">Cedar Park</option>
+              <option value="Georgetown">Gerogetown</option>
+              <option value="Hutto">Hutto</option>
+              <option value="Pflugerville">Pflugerville</option>
+          </select></p>
+
+          <p><label for="subdivision">Subdivision</label>
+        <input type="text" id="subdivision" name="subdivision"></p>
+
+        <p><label for="price">Price</label>
+        <input type="text" id="price" name="price"></p>
+
+        <p><label for="squareFeet">Square Feet</label>
+        <input type="text" id="squareFeet" name="squareFeet"></p>
+
+        <p><label for"bedrooms">Bedrooms</label>
+          <select id="bedrooms" name="bedrooms">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5+">5+</option>
+          </select></p>
+
+        <p><label for"bathrooms">Bathrooms</label>
+          <select id="bathrooms" name="bathrooms">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5+">5+</option>
+          </select></p>
+<!--       <h2>Amenities</h2>
+          <legend>Pool</legend>Yes<input type="radio" name="pool" value="yes">&nbsp;&nbsp;&nbsp;No<input type="radio" name="pool" value="no" checked> -->
+
+
+     <!--    <input type="text" id="address" name="address">
+        <input type="text" id="address" name="address">
+        <input type="text" id="address" name="address"> -->
+
+
+    <!--    <h2>Neighborhood</h2>
+       <h2>Schools</h2>
+       <h2>Description</h2>
+       <h2>Financials</h2> -->
+      <input type="submit" value="Add House">
+    </form>
+    <a href="/all">See all houses for sale</a>
+  </body>
+</html>

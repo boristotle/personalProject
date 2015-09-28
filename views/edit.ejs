@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Real Estate Site</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </head>
+  <div class="row"></div>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand">SITE NAME</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Search<span class="sr-only">(current)</span></a></li>
+        <li><a href="/new">Sell My Home</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="tel:5122709688">Phone Number</a></li>
+        <li><a href="login">Login/Register</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!--     <h1>Edit your Home</h1> -->
+    <form action="/<%= theHouse._id %>/edit" method="POST">
+ <div class="col-md-3 col-sm-6 well smartphone"><h2>Basics</h2>
+
+
+          <p><label for="address">Street Address</label>
+          <input type="text" id="address" name="address" value="<%= theHouse.address %>"></p>
+
+          <p><label for"city">City</label>
+            <select id="city" name="city">
+              <option value="Austin" <% if( theHouse.city == 'Austin') { %> selected <% }%>>Austin</option>
+              <option value="Bastrop" <% if( theHouse.city == 'Bastrop') { %> selected <% }%>>Bastrop</option>
+              <option value="Bee Cave" <% if( theHouse.city == 'Bee Cave') { %> selected <% }%>>Bee Cave</option>
+              <option value="Buda" <% if( theHouse.city == 'Buda') { %> selected <% }%>>Buda</option>
+              <option value="Burnet" <% if( theHouse.city == 'Burnet') { %> selected <% }%>>Burnet</option>
+              <option value="Cedar Park" <% if( theHouse.city == 'Cedar Park') { %> selected <% }%>>Cedar Park</option>
+              <option value="Driftwood" <% if( theHouse.city == 'Driftwood') { %> selected <% }%>>Driftwood</option>
+              <option value="Dripping Springs" <% if( theHouse.city == 'Dripping Springs') { %> selected <% }%>>Dripping Springs</option>
+              <option value="Georgetown" <% if( theHouse.city == 'Georgetown') { %> selected <% }%>>Georgetown</option>
+              <option value="Horseshoe Bay" <% if( theHouse.city == 'Horseshoe Bay') { %> selected <% }%>>Horseshoe Bay</option>
+              <option value="Hutto" <% if( theHouse.city == 'Hutto') { %> selected <% }%>>Hutto</option>
+              <option value="Jonestown" <% if( theHouse.city == 'Jonestown') { %> selected <% }%>>Jonestown</option>
+              <option value="Kyle" <% if( theHouse.city == 'Kyle') { %> selected <% }%>>Kyle</option>
+              <option value="Lago Vista" <% if( theHouse.city == 'Lago Vista') { %> selected <% }%>>Lago Vista</option>
+              <option value="Lakeway" <% if( theHouse.city == 'Lakeway') { %> selected <% }%>>Lakeway</option>
+              <option value="Leander" <% if( theHouse.city == 'Leander') { %> selected <% }%>>Leander</option>
+              <option value="Liberty Hill" <% if( theHouse.city == 'Liberty Hill') { %> selected <% }%>>Liberty Hill</option>
+              <option value="Manor" <% if( theHouse.city == 'Manor') { %> selected <% }%>>Manor</option>
+              <option value="Marble Falls" <% if( theHouse.city == 'Marble Falls') { %> selected <% }%>>Marble Falls</option>
+              <option value="Pflugerville" <% if( theHouse.city == 'Pflugerville') { %> selected <% }%>>Pflugerville</option>
+              <option value="Round Rock" <% if( theHouse.city == 'Round Rock') { %> selected <% }%>>Round Rock</option>
+              <option value="Spicewood" <% if( theHouse.city == 'Spicewood') { %> selected <% }%>>Spicewood</option>
+              <option value="Taylor" <% if( theHouse.city == 'Taylor') { %> selected <% }%>>Taylor</option>
+              <option value="the Hills" <% if( theHouse.city == 'the Hills') { %> selected <% }%>>the Hills</option>
+              <option value="West Lake Hills" <% if( theHouse.city == 'West Lake Hills') { %> selected <% }%>>West Lake Hills</option>
+              <option value="Wimberley" <% if( theHouse.city == 'Wimberley') { %> selected <% }%>>Wimberley</option>
+            </select></p>
+
+          <p><label for="price">Price</label><br>
+            <input type="text" id="price" name="price" value="<%= theHouse.price %>"></p>
+
+          <p><label for="squareFeet">Square Feet</label>
+            <input type="text" id="squareFeet" name="squareFeet" value="<%= theHouse.squareFeet %>"></p>
+
+            <p><label for"bedrooms">Bedrooms</label>
+            <select id="bedrooms" name="bedrooms">
+                <option value="1" <% if( theHouse.bedrooms == 1) { %> selected <% }%>>1</option>
+                <option value="2" <% if( theHouse.bedrooms == 2) { %> selected <% }%>>2</option>
+                <option value="3" <% if( theHouse.bedrooms == 3) { %> selected <% }%>>3</option>
+                <option value="4" <% if( theHouse.bedrooms == 4) { %> selected <% }%>>4</option>
+                <option value="5" <% if( theHouse.bedrooms == 5) { %> selected <% }%>>5</option>
+                <option value="6" <% if( theHouse.bedrooms == 6) { %> selected <% }%>>6+</option>
+            </select></p>
+
+          <p><label for"bathrooms">Bathrooms</label>
+            <select id="bathrooms" name="bathrooms">
+                <option value="1" <% if( theHouse.bathrooms == 1) { %> selected <% }%>>1</option>
+                <option value="2" <% if( theHouse.bathrooms == 2) { %> selected <% }%>>2</option>
+                <option value="3" <% if( theHouse.bathrooms == 3) { %> selected <% }%>>3</option>
+                <option value="4" <% if( theHouse.bathrooms == 4) { %> selected <% }%>>4</option>
+                <option value="5" <% if( theHouse.bathrooms == 5) { %> selected <% }%>>5+</option>
+            </select></p>
+
+           <p><label for="yearBuilt">Year Built</label>
+          <input type="text" id="yearBuilt" name="yearBuilt" value="<%= theHouse.yearBuilt %>"></p>
+
+          <p><label for"garages">Garages</label>
+            <select id="garages" name="garages">
+                <option value="1" <% if( theHouse.garages == 1) { %> selected <% }%>>1</option>
+                <option value="2" <% if( theHouse.garages == 2) { %> selected <% }%>>2</option>
+                <option value="3" <% if( theHouse.garages == 3) { %> selected <% }%>>3+</option>
+            </select></p>
+
+          <p><label for"stories">Stories</label>
+            <select id="stories" name="stories">
+                <option value="1" <% if( theHouse.stories == 1) { %> selected <% }%>>1</option>
+                <option value="2" <% if( theHouse.stories == 2) { %> selected <% }%>>2</option>
+                <option value="3" <% if( theHouse.stories == 3) { %> selected <% }%>>3</option>
+            </select></p>
+
+             <p><label for="lotSize">Lot Size (acres)</label>
+          <input type="text" id="lotSize" name="lotSize" value="<%= theHouse.lotSize %>"></p>
+
+           <p><label for="subdivision">Subdivision</label>
+              <input type="text" id="subdivision" name="subdivision" value="<%= theHouse.subdivision %>"></p>
+
+            <h2>Schools</h2>
+
+            <p><label for"schoolDistrict">School District</label>
+            <select id="schoolDistrict" name="schoolDistrict">
+                <option value="Austin ISD" <% if( theHouse.tennisCourts == 'yes') { %> selected <% } %>>Austin ISD</option>
+                <option value="Leander ISD" <% if( theHouse.tennisCourts == 'yes') { %> selected <% } %>>Leander ISD</option>
+                <option value="Round Rock ISD" <% if( theHouse.tennisCourts == 'yes') { %> selected <% } %>>Round Rock ISD</option>
+            </select></p>
+
+             <p><label for="elemSchool">Elementary School</label><br>
+            <input type="text" id="elemSchool" name="elemSchool"></p>
+
+            <p><label for="middleSchool">Middle School</label><br>
+            <input type="text" id="middleSchool" name="middleSchool"></p>
+
+            <p><label for="highSchool">High School</label><br>
+            <input type="text" id="highSchool" name="highSchool"></p> 
+        </div>
+
+        <div class="col-md-3 col-sm-6 smartphone"><h2>Amenities</h2>
+
+            <p><legend>Pool&nbsp;&nbsp;&nbsp;
+            <selection>Yes&nbsp;<input type="radio" name="pool" value="yes" <% if( theHouse.pool == 'yes') { %> checked <% } %>></selection></legend></p>
+
+            <p><legend>Master Main&nbsp;&nbsp;&nbsp;
+            <selection>Yes&nbsp;<input type="radio" name="masterMain" value="yes" <% if( theHouse.masterMain == 'yes') { %> checked <% } %>></selection></legend></p>
+
+            <p><legend>Fireplace&nbsp;&nbsp;&nbsp;
+            <selection>Yes&nbsp;<input type="radio" name="fireplace" value="yes" <% if( theHouse.fireplace == 'yes') { %> checked <% } %>></selection></legend></p>
+
+            <p><legend>Sprinkler&nbsp;&nbsp;&nbsp;
+            <selection>Yes&nbsp;<input type="radio" name="sprinkler" value="yes" <% if( theHouse.sprinkler == 'yes') { %> checked <% } %>></selection></legend></p>
+
+            <p><legend>Waterfront&nbsp;&nbsp;&nbsp;
+            <selection>Yes&nbsp;<input type="radio" name="waterfront" value="yes" <% if( theHouse.waterfront == 'yes') { %> checked <% } %>></selection></legend></p>
+
+            <p><legend>Greenbelt&nbsp;&nbsp;&nbsp;
+            <selection>Yes&nbsp;<input type="radio" name="greenbelt" value="yes" <% if( theHouse.greenbelt == 'yes') { %> checked <% } %>></selection></legend></p>
+
+            <p><legend>Media Room&nbsp;&nbsp;&nbsp;
+            <selection>Yes&nbsp;<input type="radio" name="mediaRoom" value="yes" <% if( theHouse.mediaRoom == 'yes') { %> checked <% } %>></selection></legend></p>
+
+            <p><legend>Separate Study&nbsp;&nbsp;&nbsp;
+            <selection>Yes&nbsp;<input type="radio" name="study" value="yes" <% if( theHouse.study == 'yes') { %> checked <% } %>></selection></legend></p>
+
+             <p><label for"hoaDuration">HOA Duration</label>
+            <select id="hoaDuration" name="hoaDuration">
+                <option value="none" <% if( theHouse.hoaDuration == 'none') { %> selected <% }%>>No HOA</option>
+                <option value="monthly" <% if( theHouse.hoaDuration == 'monthly') { %> selected <% }%>>Monthly</option>
+                <option value="quarterly" <% if( theHouse.hoaDuration == 'quarterly') { %> selected <% }%>>Quarterly</option>
+                <option value="semi-annually" <% if( theHouse.hoaDuration == 'semi-annually') { %> selected <% }%>>Semi-Annually</option>
+                <option value="yearly" <% if( theHouse.hoaDuration == 'yearly') { %> selected <% }%>>Yearly</option>
+            </select></p>
+
+            <p><label for="hoaAmount">HOA Amount</label>
+              <input type="text" id="hoaAmount" name="hoaAmount" value="<%= theHouse.hoaAmount %>"></p>
+          </div>
+
+         <div class="col-md-3 col-sm-7 well smartphone neighborhood"><h2>Neighborhood</h2>
+
+            <p><legend>Comm Pool
+            <selection>Yes&nbsp;<input type="radio" name="communityPool" value="yes" <% if( theHouse.communityPool == 'yes') { %> checked <% } %>></selection></legend></p>
+
+            <p><legend>Golf Comm
+            <selection>Yes&nbsp;<input type="radio" name="golfCommunity" value="yes" <% if( theHouse.golfCommunity == 'yes') { %> checked <% } %>></selection></legend></p>
+
+            <p><legend>Tennis Courts
+            <selection>Yes&nbsp;<input type="radio" name="tennisCourts" value="yes" <% if( theHouse.tennisCourts == 'yes') { %> checked <% } %>></selection></legend></p>
+
+            <p><legend>Fitness Center
+            <selection>Yes&nbsp;<input type="radio" name="fitnessCenter" value="yes" <% if( theHouse.fitnessCenter == 'yes') { %> checked <% } %>></selection></legend></p>
+
+            <p><legend>Comm Lake
+            <selection>Yes&nbsp;<input type="radio" name="lake" value="yes" <% if( theHouse.lake == 'yes') { %> checked <% } %>></selection></legend></p>
+
+            <p><legend>Clubhouse
+            <selection>Yes&nbsp;<input type="radio" name="clubHouse" value="yes" <% if( theHouse.clubHouse == 'yes') { %> checked <% } %>></selection></legend></p>
+
+            <p><legend>Jog/Bike Path
+            <selection>Yes&nbsp;<input type="radio" name="bikeJog" value="yes" <% if( theHouse.bikeJog == 'yes') { %> checked <% } %>></selection></legend></p>
+
+            <p><legend>Comm Park
+            <selection>Yes&nbsp;<input type="radio" name="communityPark" value="yes" <% if( theHouse.communityPark == 'yes') { %> checked <% } %>></selection></legend></p>
+
+          </div>
+
+         <div class="col-md-3 col-sm-5 smartphone"><h2>Description</h2>
+           <p><textarea cols="33" rows="10" name="describe" value="<%= theHouse.description %>">
+           </textarea>
+           </p>
+
+
+         <h2>Financials</h2>
+
+            <p><label for="taxes">Yearly Taxes</label>
+              <input type="text" id="taxes" name="taxes" value="<%= theHouse.taxes %>"></p>
+
+            <p><label for="taxRate">Tax Rate</label>
+              <input type="text" id="taxRate" name="taxRate" value="<%= theHouse.taxRate %>"></p>
+
+          <h2>Images</h2>
+
+               <p><label for"image">Upload Images</label>
+           <!--  <input type="file" name="image"></p> -->
+
+        <!--     <p><label for="county">County</label><br>
+              <input type="text" id="county" name="county"></p> -->
+              <p>&nbsp;</p>
+              <p><input type="submit" value="Submit"></p>
+            </div>
+
+        
+      </form>
+    </div>
+  </body>
+</html>

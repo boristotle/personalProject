@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Buy a Home, Sell a Home</title>
+     <link rel='stylesheet' href='/stylesheets/style.css' />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+    <div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand">SITE NAME</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="search">Search<span class="sr-only">(current)</span></a></li>
+        <li><a href="new">Sell My Home</a></li>
+        <!-- <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="tel:5122709688">Phone Number</a></li>
+        <li><a href="login">Login/Register</a></li>
+        <!-- <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li> -->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+    <div class="container">
+
+      <!-- <h1>Search for Homes</h1> -->
+        
+        <form action="/search" method="post">
+          
+          <p><label for"city">City</label>
+          <select id="city" name="city">
+              <option value="Austin">Austin</option>
+              <option value="Bastrop">Bastrop</option>
+              <option value="Bee Cave">Bee Cave</option>
+              <option value="Buda">Buda</option>
+              <option value="Burnet">Burnet</option>
+              <option value="Cedar Park">Cedar Park</option>
+              <option value="Driftwood">Driftwood</option>
+              <option value="Dripping Springs">Dripping Springs</option>
+              <option value="Georgetown">Georgetown</option>
+              <option value="Horseshoe Bay">Horseshoe Bay</option>
+              <option value="Hutto">Hutto</option>
+              <option value="Jonestown">Jonestown</option>
+              <option value="Kyle">Kyle</option>
+              <option value="Lago Vista">Lago Vista</option>
+              <option value="Lakeway">Lakeway</option>
+              <option value="Leander">Leander</option>
+              <option value="Liberty Hill">Liberty Hill</option>
+              <option value="Manor">Manor</option>
+              <option value="Marble Falls">Marble Falls</option>
+              <option value="Pflugerville">Pflugerville</option>
+              <option value="Round Rock">Round Rock</option>
+              <option value="Spicewood">Spicewood</option>
+              <option value="Taylor">Taylor</option>
+              <option value="the Hills">the Hills</option>
+              <option value="West Lake Hills">West Lake Hills</option>
+              <option value="Wimberley">Wimberley</option>
+          </select></p>
+
+          <p><label for="minprice">Min $</label>
+            <select id="minprice" name="minprice">
+                <option value="0">Any</option>
+                <option value="100000">$100k</option>
+                <option value="125000">$125k</option>
+                <option value="150000">$150k</option>
+                <option value="175000">$175k</option>
+                <option value="200000">$200k</option>
+                <option value="225000">$225k</option>
+                <option value="250000">$250k</option>
+                <option value="275000">$275k</option>
+                <option value="300000">$300k</option>
+                <option value="325000">$325k</option>
+                <option value="350000">$350k</option>
+                <option value="375000">$375k</option>
+                <option value="400000">$400k</option>
+                <option value="425000">$425k</option>
+                <option value="450000">$450k</option>
+                <option value="475000">$475k</option>
+                <option value="500000">$500k</option>
+                <option value="550000">$550k</option>
+                <option value="600000">$600k</option>
+                <option value="650000">$650k</option>
+                <option value="700000">$700k</option>
+                <option value="750000">$750k</option>
+                <option value="800000">$800k</option>
+                <option value="850000">$850k</option>
+                <option value="900000">$900k</option>
+                <option value="950000">$950k</option>
+                <option value="1000000">$1 Million</option>
+                <option value="1500000">$1.5 Million</option>
+                <option value="2000000">$2 Million</option>
+                <option value="2500000">$2.5 Million</option>
+                <option value="3000000">$3 Million</option>
+                <option value="3500000">$3.5 Million</option>
+                <option value="4000000">$4 Million</option>
+                <option value="4500000">$4.5 Million</option>
+                <option value="5000000">$5 Million</option>
+                <option value="7500000">$7.5 Million</option>
+                <option value="10000000">$10 Million</option>
+
+
+            </select></p>
+      
+              <p><label for="maxprice">Max $</label>
+             <select id="maxprice" name="maxprice">
+              <option value="999999999">Any</option>
+                <option value="100000">$100k</option>
+                <option value="125000">$125k</option>
+                <option value="150000">$150k</option>
+                <option value="175000">$175k</option>
+                <option value="200000">$200k</option>
+                <option value="225000">$225k</option>
+                <option value="250000">$250k</option>
+                <option value="275000">$275k</option>
+                <option value="300000">$300k</option>
+                <option value="325000">$325k</option>
+                <option value="350000">$350k</option>
+                <option value="375000">$375k</option>
+                <option value="400000">$400k</option>
+                <option value="425000">$425k</option>
+                <option value="450000">$450k</option>
+                <option value="475000">$475k</option>
+                <option value="500000">$500k</option>
+                <option value="550000">$550k</option>
+                <option value="600000">$600k</option>
+                <option value="650000">$650k</option>
+                <option value="700000">$700k</option>
+                <option value="750000">$750k</option>
+                <option value="800000">$800k</option>
+                <option value="850000">$850k</option>
+                <option value="900000">$900k</option>
+                <option value="950000">$950k</option>
+                <option value="1000000">$1 Million</option>
+                <option value="1500000">$1.5 Million</option>
+                <option value="2000000">$2 Million</option>
+                <option value="2500000">$2.5 Million</option>
+                <option value="3000000">$3 Million</option>
+                <option value="3500000">$3.5 Million</option>
+                <option value="4000000">$4 Million</option>
+                <option value="4500000">$4.5 Million</option>
+                <option value="5000000">$5 Million</option>
+                <option value="7500000">$7.5 Million</option>
+                <option value="10000000">$10 Million</option>
+
+            </select></p>
+       
+           <p><label for"bedsmin">Beds</label>
+          <select id="bedsmin" name="bedsmin">
+              <option value="0">Any</option>
+              <option value="1">1+</option>
+              <option value="2">2+</option>
+              <option value="3">3+</option>
+              <option value="4">4+</option>
+              <option value="5">5+</option>
+              <option value="6">6+</option>
+          </select></p>
+
+          <p><label for"bathsmin">Baths</label>
+          <select id="bathsmin" name="bathsmin">
+              <option value="0">Any</option>
+              <option value="1">1+</option>
+              <option value="2">2+</option>
+              <option value="3">3+</option>
+              <option value="4">4+</option>
+              <option value="5">5+</option>
+          </select></p>
+       
+
+              <p><label for="minsqft">Min SqFt</label>
+              <select id="minsqft" name="minsqft">
+                <option value="100" selected>Any</option>
+                <option value="800">800</option>
+                <option value="1000">1000</option>
+                <option value="1200">1200</option>
+                <option value="1400">1400</option>
+                <option value="1600">1600</option>
+                <option value="1800">1800</option>
+                <option value="2000">2000</option>
+                <option value="2200">2200</option>
+                <option value="2400">2400</option>
+                <option value="2600">2600</option>
+                <option value="2800">2800</option>
+                <option value="3000">3000</option>
+                <option value="3200">3200</option>
+                <option value="3400">3400</option>
+                <option value="3600">3600</option>
+                <option value="3800">3800</option>
+                <option value="4000">4000</option>
+                <option value="4500">4500</option>
+                <option value="5000">5000</option>
+
+              </select></p>
+      
+             <p><label for="maxsqft">Max SqFt</label>
+             <select id="maxsqft" name="maxsqft">
+              <option value="99999" selected>Any</option>
+              <option value="800">800</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="2000">2000</option>
+              <option value="2200">2200</option>
+              <option value="2400">2400</option>
+              <option value="2600">2600</option>
+              <option value="2800">2800</option>
+              <option value="3000">3000</option>
+              <option value="3200">3200</option>
+              <option value="3400">3400</option>
+              <option value="3600">3600</option>
+              <option value="3800">3800</option>
+              <option value="4000">4000</option>
+              <option value="4500">4500</option>
+              <option value="5000">5000</option>
+            </select></p>
+          
+          <p><label for"stories">Stories</label>
+          <select id="stories" name="stories">
+              <option value="3">Any</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+          </select></p>
+
+              <p><label for"garages">Garages</label>
+          <select id="garages" name="garages">
+              <option value="1">Any</option>
+              <option value="2">2+</option>
+              <option value="3">3+</option>
+          </select></p>
+
+
+
+ <!--        <p><label for="address">Street Address</label>
+        <input type="text" id="address" name="address"></p> -->
+
+               <!--      <p><label for="subdivision">Subdivision</label>
+            <input type="text" id="subdivision" name="subdivision"></p> -->
+<!-- 
+         <p><label for="yearBuilt">Built on or after</label>
+        <input type="text" id="yearBuilt" name="yearBuilt"></p>
+
+  
+
+      <h2>Amenities</h2>
+
+          <p><legend>Pool&nbsp;&nbsp;&nbsp;
+          Yes<input type="radio" name="pool" value="yes">&nbsp;&nbsp;&nbsp;No<input type="radio" name="pool" value="no" checked></legend></p>
+
+          <p><legend>Master on Main&nbsp;&nbsp;&nbsp;
+          Yes<input type="radio" name="masterMain" value="yes">&nbsp;&nbsp;&nbsp;No<input type="radio" name="masterMain" value="no" checked></legend></p> -->
+<!-- 
+          <p><legend>Fireplace&nbsp;&nbsp;&nbsp;
+          Yes<input type="radio" name="fireplace" value="yes">&nbsp;&nbsp;&nbsp;No<input type="radio" name="fireplace" value="no" checked></legend></p>
+ -->
+     <!--      <p><legend>Sprinkler&nbsp;&nbsp;&nbsp;
+          Yes<input type="radio" name="sprinkler" value="yes">&nbsp;&nbsp;&nbsp;No<input type="radio" name="sprinkler" value="no" checked></legend></p>
+ -->
+        <!--   <p><legend>Waterfront&nbsp;&nbsp;&nbsp;
+          Yes<input type="radio" name="waterfront" value="yes">&nbsp;&nbsp;&nbsp;No<input type="radio" name="waterfront" value="no" checked></legend></p>
+ -->
+          <!-- <p><legend>Greenbelt&nbsp;&nbsp;&nbsp;
+          Yes<input type="radio" name="greenbelt" value="yes">&nbsp;&nbsp;&nbsp;No<input type="radio" name="greenbelt" value="no" checked></legend></p> -->
+<!-- 
+          <p><legend>Media Room&nbsp;&nbsp;&nbsp;
+          Yes<input type="radio" name="mediaRoom" value="yes">&nbsp;&nbsp;&nbsp;No<input type="radio" name="mediaRoom" value="no" checked></legend></p> -->
+<!-- 
+          <p><legend>Separate Study&nbsp;&nbsp;&nbsp;
+          Yes<input type="radio" name="study" value="yes">&nbsp;&nbsp;&nbsp;No<input type="radio" name="study" value="no" checked></legend></p>
+ -->
+
+<!--        <h2>Neighborhood</h2>
+
+          <p><legend>Community Pool&nbsp;&nbsp;&nbsp;
+          Yes<input type="radio" name="communityPool" value="yes">&nbsp;&nbsp;&nbsp;No<input type="radio" name="communityPool" value="no" checked></legend></p>
+
+          <p><legend>Golf Community&nbsp;&nbsp;&nbsp;
+          Yes<input type="radio" name="golfCommunity" value="yes">&nbsp;&nbsp;&nbsp;No<input type="radio" name="golfCommunity" value="no" checked></legend></p>
+
+          <p><legend>Tennis Courts&nbsp;&nbsp;&nbsp;
+          Yes<input type="radio" name="tennisCourts" value="yes">&nbsp;&nbsp;&nbsp;No<input type="radio" name="tennisCourts" value="no" checked></legend></p>
+
+          <p><legend>Fitness Center&nbsp;&nbsp;&nbsp;
+          Yes<input type="radio" name="fitnessCenter" value="yes">&nbsp;&nbsp;&nbsp;No<input type="radio" name="fitnessCenter" value="no" checked></legend></p>
+
+          <p><legend>Community Lake&nbsp;&nbsp;&nbsp;
+          Yes<input type="radio" name="lake" value="yes">&nbsp;&nbsp;&nbsp;No<input type="radio" name="lake" value="no" checked></legend></p>
+
+          <p><legend>Clubhouse&nbsp;&nbsp;&nbsp;
+          Yes<input type="radio" name="clubHouse" value="yes">&nbsp;&nbsp;&nbsp;No<input type="radio" name="clubHouse" value="no" checked></legend></p>
+
+          <p><legend>Jogging/Biking Path&nbsp;&nbsp;&nbsp;
+          Yes<input type="radio" name="bikeJog" value="yes">&nbsp;&nbsp;&nbsp;No<input type="radio" name="bikeJog" value="no" checked></legend></p>
+
+          <p><legend>Community Park&nbsp;&nbsp;&nbsp;
+          Yes<input type="radio" name="communityPark" value="yes">&nbsp;&nbsp;&nbsp;No<input type="radio" name="communityPark" value="no" checked></legend></p> -->
+<!-- 
+       <h2>Schools</h2>
+
+          <p><label for"schoolDistrict">School District</label>
+          <select id="schoolDistrict" name="schoolDistrict">
+              <option value="Austin ISD">Austin ISD</option>
+              <option value="Leander ISD">Leander ISD</option>
+              <option value="Round Rock ISD">Round Rock ISD</option>
+          </select></p>
+
+
+       <h2>Financials</h2>
+
+          <p><label for"hoaDuration">HOA Duration</label>
+          <select id="hoaDuration" name="hoaDuration">
+              <option value="monthly">Monthly</option>
+              <option value="quarterly">Quarterly</option>
+              <option value="semi-annually">Semi-Annually</option>
+              <option value="yearly">Yearly</option>
+          </select></p>
+ -->
+
+
+           <!--  <p>More Search Options</p> -->
+      <p><input type="submit" value="Search"></p>
+    </form>
+  </div>
+</div>
+    <!-- // <script src="/javascripts/javascript.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Buy a Home, Sell a Home</title>
+    <link rel='stylesheet' href='/stylesheets/style2.css' />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand">SITE NAME</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Search<span class="sr-only">(current)</span></a></li>
+        <li><a href="/new">Sell My Home</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="tel:5122709688">Phone Number</a></li>
+        <li><a href="login">Login/Register</a></li>
+        <!-- <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li> -->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+   
+    <table>
+        <tr>
+          <div id="prevNext"><button>Prev</button><button>Back to Results</button><button>Next</button></div><br>
+     <div id="images">
+       <div><strong>Address: </strong><%= theHouse.address %> in <strong><%= theHouse.city %></strong></div>
+       <div><strong>Neighborhood: </strong><a href="/<%= theHouse.subdivision %>"><%= theHouse.subdivision %></a></div>
+        <!-- <div><strong>Days on Market: </strong>[placeholder for DOM]</div> -->
+<!--         <div id="newlyListed"><div id="button"><button id="new" disabled="true">New!</button>
+  <button id="new" disabled="true">Status Placeholder</button></div>  -->
+
+        <img id="houseImage" src="/images/house.jpg">
+        <!-- <div id="images2"><button id="prev">Prev</button><button id="next">Next</button></div> -->
+       </div><br></tr>
+      
+       
+
+     <div id="amenities">
+       <table>
+          <tr>
+            <td>
+              <button id="separateStudy" disabled="true"><img src="/images/left-arrow.svg" height="20px" width="20px">Prev Imag</button>
+          <button id="separateStudy" disabled="true"><img src="/images/right-arrow.svg" height="20px" width="20px">Next Image</button>
+          <button id="masterMain" disabled="true"><img src="/images/favorite-icon.png" height="20px" width="20px"> Add Favorite</button>
+          <button id="masterMain" disabled="true"><a href="https://www.google.com/maps/place/<%= theHouse.address %> <%= theHouse.city %>"><img src="/images/map-icon.svg" height="20px" width="20px"> Map Link</a></button>
+        </td>
+      </tr>
+           
+
+            </table>
+            <table id="leftTable">
+              <tr>
+                <strong><span>Basics</span></strong>
+              </tr>
+            <td>
+                 <button id="masterMain" disabled="true"><height="20px" width="20px"><span class="price"><%= theHouse.price %></span></button>
+                 <button id="separateStudy" disabled="true"><img src="/images/stories-icon.png" height="20px" width="20px"> <%= theHouse.stories %> Stories</button>
+                  <button id="separateStudy" disabled="true"><img src="/images/ft-icon.png" height="20px" width="20px"> <%= theHouse.squareFeet %> SQFT</button>
+                 <button id="separateStudy" disabled="true"><img src="/images/bed-icon.png" height="20px" width="20px"> <%= theHouse.bedrooms %> Beds</button>
+            </td>
+          </tr>
+          <tr>
+            <td> 
+                <button id="separateStudy" disabled="true"><img src="/images/bathroom-icon.png" height="20px" width="20px"> <%= theHouse.bathrooms %> Baths</button>
+                <button id="separateStudy" disabled="true"><img src="/images/garage-icon.png" height="20px" width="20px"> <%= theHouse.garages %> Garages</button>
+                <button id="separateStudy" disabled="true"><img src="/images/house-icon.png" height="20px" width="20px"> Built <%= theHouse.yearBuilt %></button>
+                <button id="separateStudy" disabled="true"><img src="/images/lot-size-icon.png" height="20px" width="20px"> <%= theHouse.lotSize %> Acres</button>
+             </td>
+          </tr>
+           <tr>
+            <td> 
+                 <!-- <button id="pool" disabled="true"><img src="/images/county-icon.png" height="20px" width="20px"> County:<br> Travis</button> -->
+                <button id="separateStudy" disabled="true"><height="20px" width="20px">  Price/SqFt: <br>$<%= theHouse.pricePerSqFt.toFixed(2) %></button>
+             </td>
+          </tr>
+
+            </table>
+            <table>
+          <tr><strong><span>Amenities</span></strong>
+          </tr>  
+             <tr>
+              
+            <td>
+                <% if (theHouse.pool === 'yes') { %>
+                <button id="pool" disabled="true"><img src="/images/icon-swimming.png" height="20px" width="20px"> Pool</button> <% } %>
+                <% if (theHouse.waterfront === 'yes') { %>
+                <button id="pool" disabled="true"><img src="/images/waterfront-icon.png" height="20px" width="20px"> Waterfront</button><% } %>
+                <% if (theHouse.fireplace === 'yes') { %>
+                <button id="separateStudy" disabled="true"><img src="/images/fireplace-icon.png" height="20px" width="20px"> Fireplace</button><% } %>
+               <% if (theHouse.sprinkler === 'yes') { %>
+                <button id="pool" disabled="true"><img src="/images/sprinkler-icon.png" height="20px" width="20px"> Sprinkler</button><% } %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <% if (theHouse.masterMain === 'yes') { %>
+                <button id="separateStudy" disabled="true"><img src="/images/bed-icon.png" height="20px" width="20px"> Master Main<br></button><% } %>
+                <% if (theHouse.study === 'yes') { %>
+                 <button id="separateStudy" disabled="true"><img src="/images/study-icon.png" height="20px" width="20px"> Study Room</button><% } %>
+                 <% if (theHouse.mediaRoom === 'yes') { %>
+                <button id="separateStudy" disabled="true"><img src="/images/media-room-icon.png" height="20px" width="20px"> Media Room</button><% } %>
+                <% if (theHouse.greenbelt === 'yes') { %>
+                <button id="waterfront" disabled="true"><img src="/images/trees-icon.png" height="20px" width="20px"> Greenbelt</button><% } %>
+            </td>
+          </tr> 
+        </table>
+          <table>
+          <tr><strong><span>Neighborhood</span></strong> 
+          </tr>  
+             <tr><br>
+              <!-- <%= theHouse.subdivision %> -->
+              
+            <td>
+                <% if (theHouse.communityPool === 'yes') { %>
+                <button id="pool" disabled="true"><img src="/images/swimming.png" height="20px" width="20px"> Community <br>Pool</button><% } %>
+                <% if (theHouse.golfCommunity === 'yes') { %>
+                <button id="waterfront" disabled="true"><img src="/images/golf-icon3.png" height="20px" width="20px">Golf<br>Community</button><% } %>
+                <% if (theHouse.tennisCourts === 'yes') { %>
+                <button id="separateStudy" disabled="true"><img src="/images/tennis-icon.png" height="20px" width="20px"> Community<br>Tennis Courts</button><% } %>
+                <% if (theHouse.fitnessCenter === 'yes') { %>
+                 <button id="separateStudy" disabled="true"><img src="/images/gym-icon.png" height="20px" width="20px"> Community<br>Fitness Center</button><% } %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <% if (theHouse.lake === 'yes') { %>
+                <button id="pool" disabled="true"><img src="/images/lake-icon.png" height="20px" width="20px"> Community<br>Lake</button><% } %>
+                <% if (theHouse.clubHouse === 'yes') { %>
+                <button id="separateStudy" disabled="true"><img src="/images/clubhouse-icon.png" height="20px" width="20px"> Community<br>Club House</button><% } %>
+                <% if (theHouse.bikeJog === 'yes') { %>
+                <button id="waterfront" disabled="true"><img src="/images/biking-icon.png" height="20px" width="20px"> Jogging/ Biking Path</button><% } %>
+                <% if (theHouse.communityPark === 'yes') { %>
+                 <button id="waterfront" disabled="true"><img src="/images/walking-path-icon.png" height="20px" width="20px">Community<br>Park</button><% } %>
+            </td>
+            <tr>
+             <td>
+              <% if (theHouse.hoaDuration != "none") { %>
+                <button id="waterfront" disabled="true"> HOA Fee: $<%= theHouse.hoaAmount %><br><%= theHouse.hoaDuration %> </button><% } %>
+            </td>
+          </tr>
+          </tr>
+            </table>
+            <table>
+          <tr><strong><span>Schools</span></strong>
+          </tr>  
+           
+          <tr>
+            <td>
+              
+              <strong>School District:</strong>  <%= theHouse.schoolDisctrict %><br>
+          <strong>Schools (elem, middle, high):</strong> <%= theHouse.elemSchool %>, <%= theHouse.middleSchool %>, <%= theHouse.highSchool %><br><br>
+          
+          
+          
+            </td>
+          </tr>
+        </table>
+     
+              <table id="description">
+          <tr><strong><span>Description</span></strong>
+          </tr>
+             <tr>
+              <td> 
+
+          </tr>
+          <tr>
+            <% if (theHouse.description != null || theHouse.description != undefined) { %>
+            <td><%= theHouse.description %></td><% } %>
+          </tr>
+            </table>
+            <table>
+          <tr><strong><span>Financials</span></strong>
+          </tr>  
+             <tr>
+              
+            <td>
+                <button id="masterMain" disabled="true"> Est. Taxes: <br><%= theHouse.taxes %></button>
+                <button id="masterMain" disabled="true"> Tax Rate: <br><%= theHouse.taxRate %></button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <button id="masterMain" disabled="true">Est. Mortage: <br>$375/mo</button>
+            </td>
+            </td>
+          </tr>
+            </table>
+          <!--         <table>
+          <tr><strong><span>Showing Info</span></strong>
+          </tr>  
+            <tr>
+              <td>Darrin Bennett</td>
+            </tr>
+            <tr>
+              <td>512-270-9688</td>
+            </tr>
+            <tr> 
+                <td>Virtual Realty Group</td>
+            </tr>
+          </div>
+            </table> -->
+<div><em>Listing Courtesy of: [brokerage placeholder]</em></div><br>
+<div><button>Prev</button><button>Back to Results</button><button>Next</button></div>
+<script src='/javascripts/javascript.js'></script> 
+  </body>
+</html>

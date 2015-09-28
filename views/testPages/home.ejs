@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>This is the home page showing all houses for sale</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <p>This is the home Page showing all houses for sale</p>
+      <p><a href="/new">Add your home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/search">Search Homes</a></p>
+
+      <table>
+        <th>Image</th>
+        <th>City</th>
+        <th>Price</th>
+        <th>Stories</th>
+        <th>Address</th>
+        <th>Bedrooms</th>
+        <th>Bathrooms</th>
+        <th>Square Feet</th>
+        <th>Garages</th>
+        <th>Lot Size</th>
+        <th>Amenities</th>
+        <th>Neighborhood Amenities</th>
+        <th>Description</th>
+        <th>HOA Dues</th>
+        <th>Yearly Taxes</th>
+        <th>Est Mortgage</th>
+        <th>Subdivision</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      <% allHouses.forEach(function(house) { %>
+      <tr>  
+        <td>[image placeholder]</td>
+        <td><a href="<%= house._id %>/show"><%= house.city %></a></td>
+        <td>$<%= house.price %></td>
+        <td><%= house.stories %></td>
+        <td> <%= house.address %></td>
+        <td><%= house.bedrooms %></td>
+        <td><%= house.bathrooms %></td>
+        <td><%= house.squareFeet %></td>
+        <td><%= house.garages %></td>
+        <td><%= house.lotSize %></td>
+        <td> <% if (house.pool === 'yes') { %>
+            <img src="/images/pool icon.png">
+        <% } %>
+         <% if (house.masterMain === 'yes') { %>
+            <img src="/images/master-main-icon.ico">
+        <% } %>
+          <% if (house.fireplace === 'yes') { %>
+            <img src="/images/fireplace-icon.png">
+        <% } %>
+          <% if (house.sprinkler === 'yes') { %>
+            <img src="/images/sprinkler-icon.png">
+        <% } %>
+        <% if (house.waterfront === 'yes') { %>
+            <img src="/images/waterfront-icon.png">
+        <% } %>
+        <% if (house.greenbelt === 'yes') { %>
+            <img src="/images/trees-icon.png">
+        <% } %>
+        <% if (house.mediaRoom === 'yes') { %>
+            <img src="/images/media-room-icon.png">
+        <% } %>
+        <% if (house.study === 'yes') { %>
+            <img src="/images/study-icon.png">
+        <% } %>
+      </td>
+
+        <td>
+          <% if (house.communityPool === 'yes') { %>
+            <img src="/images/swimming.png">
+        <% } %>
+        <% if (house.golfCommunity === 'yes') { %>
+            <img src="/images/golf-icon.png">
+        <% } %>
+        <% if (house.tennisCourts === 'yes') { %>
+            <img src="/images/tennis-icon.png">
+        <% } %>
+        <% if (house.fitnessCenter === 'yes') { %>
+            <img src="/images/gym-icon.png">
+        <% } %>
+        <% if (house.lake === 'yes') { %>
+            <img src="/images/lake-icon.png">
+        <% } %>
+        <% if (house.clubHouse === 'yes') { %>
+            <img src="/images/clubhouse-icon.png">
+        <% } %>
+        <% if (house.bikeJog === 'yes') { %>
+            <img src="/images/biking-icon.png">
+        <% } %>
+          <% if (house.communityPark === 'yes') { %>
+            <img src="/images/park-icon.png">
+        <% } %>
+
+      </td>
+      <td><%= house.description %></td>
+      <td><%= house.hoaDuration %><br><%= house.hoaAmount %></td>
+      <td><%= house.taxes %></td>
+      <td>Estimated Mortagage Calculator Input Here</td>
+      <td><%= house.subdivision %></td>
+        <td><a href="<%= house._id %>/edit">Edit</a></td>
+        <td><form action="<%= house._id %>/delete" method='post'>
+          <input type="submit" value="Delete"></form> 
+            </td>
+        
+      </tr>
+        
+      <% }) %>
+      </table>
+  </body> 
+
